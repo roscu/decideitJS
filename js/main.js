@@ -82,22 +82,40 @@
 
   */
 
-  class Base {
-    constructor(value, content) {
-      this.value = value;
-      this.content = content;
+  class Content {
+    constructor(text, value) {  
+      if(value !== undefined){this.value = value}
+      else { this.value = 1}
+      this.text = text;
       return this;
+    }
+    view = (function(x){
+      //takes bool
+      let  val = true;
+      if(x !== undefined){
+        val = x;
+      }
+      return val;
+    })()
+    weight = function(x){ this.value = this.value*x}
+    pnc = function(x){
+      let val = false;
+      if(x !== undefined){
+        if(x !== val){
+          this.value = (-1)*this.value;
+        }
+      }
     }
   }
 
-  let CONTENT = "this is a users string of content";
-  let DEP = true;
+ // let CONTENT = "this is a users string of content";
+ // let DEP = true;
 
-  if (DEP) {
-    const prune = new Base(0, CONTENT);
-  } else {
-    const singleton = new Base(1, CONTENT);
-  }
+  //if (DEP) {
+  //  const prune = new Base(0, CONTENT);
+  //} else {
+   // const singleton = new Base(1, CONTENT);
+  //}
 
   // get user from db
   // let user from db be user1
