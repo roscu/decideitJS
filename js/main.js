@@ -107,7 +107,34 @@
       }
     }
   }
-
+  class Content {
+    constructor(text, value) {  
+      if(value !== undefined){this.value = value}
+      else { this.value = 1}
+      this.text = text;
+      this.view = true;
+      return this;
+    }
+  }
+  
+ function base(x,options){
+  //takes object and an options array 
+  let obj = {
+    content: x,
+    view: null,
+  };
+  obj.view = (function(){if(x.view){return "this is a view"}else{ return "this is off"}})();
+   
+  obj.content.value *=-1;
+   
+  return obj;
+}
+  
+  
+  let user = new Content("yesm",32);
+  console.log(base(user));
+ 
+ 
  // let CONTENT = "this is a users string of content";
  // let DEP = true;
 
