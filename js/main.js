@@ -81,7 +81,7 @@
     tables????
 
   */
-
+// starbuks code 
   class Content {
     constructor(text, value) {  
       if(value !== undefined){this.value = value}
@@ -133,7 +133,30 @@
   
   let user = new Content("yesm",32);
   console.log(base(user));
- 
+
+  /////// office code
+  class Content {
+    constructor(text, value) {
+
+      if( value !== undefined ){ this.value = value } 
+      else {this.value = 1};
+      this.text = text;
+      return this;
+    }
+    view = function (x) {
+      let val = true;
+      if(x !== undefined){val = x}
+      return val;
+    }
+    weight = function(x){ this.value = this.value*x}
+    pnc = function(){
+
+    }
+  }
+
+  const prune = new Content("yesm",10);
+  prune.weight(.5);
+  console.log()
  
  // let CONTENT = "this is a users string of content";
  // let DEP = true;
