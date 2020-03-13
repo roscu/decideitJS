@@ -81,60 +81,42 @@
     tables????
 
   */
-// starbuks code 
+
+  /*   starbucks code
   class Content {
-    constructor(text, value) {  
-      if(value !== undefined){this.value = value}
-      else { this.value = 1}
+    constructor(text, value) {
+      if (value !== undefined) {
+        this.value = value;
+      } else {
+        this.value = 1;
+      }
       this.text = text;
       return this;
     }
-    view = (function(x){
+    view = (function(x) {
       //takes bool
-      let  val = true;
-      if(x !== undefined){
+      let val = true;
+      if (x !== undefined) {
         val = x;
       }
       return val;
-    })()
-    weight = function(x){ this.value = this.value*x}
-    pnc = function(x){
+    })();
+    weight = function(x) {
+      this.value = this.value * x;
+    };
+    pnc = function(x) {
       let val = false;
-      if(x !== undefined){
-        if(x !== val){
-          this.value = (-1)*this.value;
+      if (x !== undefined) {
+        if (x !== val) {
+          this.value = -1 * this.value;
         }
       }
-    }
+    };
   }
-  class Content {
-    constructor(text, value) {  
-      if(value !== undefined){this.value = value}
-      else { this.value = 1}
-      this.text = text;
-      this.view = true;
-      return this;
-    }
-  }
-  
- function base(x,options){
-  //takes object and an options array 
-  let obj = {
-    content: x,
-    view: null,
-  };
-  obj.view = (function(){if(x.view){return "this is a view"}else{ return "this is off"}})();
-   
-  obj.content.value *=-1;
-   
-  return obj;
-}
-  
-  
-  let user = new Content("yesm",32);
-  console.log(base(user));
+  */
 
-  /////// office code
+  /*
+  office code
   class Content {
     constructor(text, value) {
 
@@ -153,35 +135,97 @@
 
     }
   }
-
   const prune = new Content("yesm",10);
   prune.weight(.5);
-  console.log()
- 
- // let CONTENT = "this is a users string of content";
- // let DEP = true;
+   console.log()
+ */
 
-  //if (DEP) {
-  //  const prune = new Base(0, CONTENT);
-  //} else {
-   // const singleton = new Base(1, CONTENT);
-  //}
+  /* 
+  let CONTENT = "this is a users string of content";
+  let DEP = true;
 
-  // get user from db
-  // let user from db be user1
-  // let user1 = new TimeLine()
-  // let user create any number of scenerios
-  // let user1.timeline.scenerio = new array(2)
-  // let user1.scenerio[0] = content1
-  // let user1.scenerio[1] = content2
-  // let user select what to do with the content, ie the type of decision
-  // let new decision be added to the scenerio
-  // let user create a next event
-  //let user crete more scenerios and add to this event but add a cap
-  // return a structured object or json file with the users saved scenerio
-  //save the scenerio
-  //allow users to have many timelines
-  // all defaults should be pure and be content-based first
+  if (DEP) {
+   const prune = new Base(0, CONTENT);
+  } else {
+  const singleton = new Base(1, CONTENT);
+  }
+  */
 
+  /*
+  get user from db
+  let user from db be user1
+  let user1 = new TimeLine()
+  let user create any number of scenerios
+  let user1.timeline.scenerio = new array(2)
+  let user1.scenerio[0] = content1
+  let user1.scenerio[1] = content2
+  let user select what to do with the content, ie the type of decision
+  let new decision be added to the scenerio
+  let user create a next event
+  let user crete more scenerios and add to this event but add a cap
+  return a structured object or json file with the users saved scenerio
+  save the scenerio
+  allow users to have many timelines
+  all defaults should be pure and be content-based first
+  */
 
+  /*
+  profile 
+    username
+    pass
+    email
+    decision [timelines]
+
+    stage1
+    gather info ->outline -> organize -> comment -> move around -> cross things off -> rearrange {have a clearer mental picture}
+    stage 2
+      make more comments -> bring stuff in -> move more things around -> cross off more shit-> pros and cons
+    stage 3 choice 
+    intermediate stages could be gater more information and redo step  1->2
+    a plan will often go unfinished when a choice is made, we will often never see stage 3 but must include
+    stage 4 report
+
+    things to support
+      list
+      tabular calculations
+      rankings 
+      markdown? maybe
+      sharable? reporting formats so that people could show how they would solve a problem
+  
+  */
+
+  class Content {
+    constructor(text, value) {
+      if (value !== undefined) {
+        this.value = value;
+      } else {
+        this.value = 1;
+      }
+      this.text = text;
+      this.view = true;
+      return this;
+    }
+  }
+
+  function base(x, options) {
+    //takes object and an options array
+    let obj = {
+      content: x,
+      view: null
+    };
+    obj.view = (function() {
+      if (x.view) {
+        return "this is a view";
+      } else {
+        return "this is off";
+      }
+    })();
+
+    obj.content.value *= -1;
+
+    return obj;
+  }
+
+  let user = new Content("yesm", 32);
+  console.log(base(user));
 })();
